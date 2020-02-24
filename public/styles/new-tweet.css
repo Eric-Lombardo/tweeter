@@ -1,0 +1,28 @@
+textarea {
+  display: block;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  width: 100%;
+  font-weight: 700;
+  border-bottom: 3px solid #545149;
+}
+
+.form-flex-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.counter {
+  font-family: "Bungee";
+}
+
+.submit-btn {
+  border: none;
+  background-color: #4056A1;
+  color: azure;
+  font-family: "Bungee";
+  font-size: 18px;
+}
