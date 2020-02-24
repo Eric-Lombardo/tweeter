@@ -26,6 +26,15 @@ nav {
   align-items: center; 
 }
 
+@keyframes color_change {
+  0% { color: blue; }
+  25% { color: purple; }
+  50% { color: red; }
+  75% { color: yellow; }
+  100% { color: blue; }
+}
+
 .fa-angle-double-down {
-  color: red;
+  /* color: red; */
+  animation: color_change 5s infinite;
 }
