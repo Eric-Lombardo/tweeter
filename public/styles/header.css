@@ -1,0 +1,9 @@
+header {
+  height: 400px;
+  width: 100%;
+  background-color: #fc6500;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  margin-top: 120px;
+  display: block;
+  text-align: center;
+}
