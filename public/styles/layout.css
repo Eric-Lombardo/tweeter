@@ -37,14 +37,18 @@ main {
 }
 
 .old-tweets:hover {
-  font-weight: bold;
-  box-shadow: 8px 8px #00cafe;
+  color: black;
+  box-shadow: 8px 8px #79a5ed;
 }
 
 .old-tweets:hover #user-tag {
   display: block;
+  color: #79a5ed;
 }
 
+.old-tweets:hover .icon-group {
+  color: #79a5ed;
+}
 
 #old-tweets-header {
   display: flex;
@@ -73,9 +77,10 @@ border: 2px solid #545149;
 .icon-group {
   display: flex;
   justify-content: space-evenly;
+  color: #9ebcec;
 }
 
 #user-tag {
   display: none;
-  color: #00cafe
+  color: #79a5ed;
 }
