@@ -30,27 +30,31 @@ main {
   margin: 0 auto;
 }
 
-.old-tweets {
+#one {
   border: 2px solid #545149;
   padding: 0.5em;
   margin-top: 2em;
 }
 
-.old-tweets:hover {
+#one:hover {
   color: black;
   box-shadow: 8px 8px #79a5ed;
 }
 
-.old-tweets:hover #user-tag {
+#one:hover #user-tag {
   display: block;
   color: #79a5ed;
 }
 
-.old-tweets:hover .icon-group {
+#one:hover .icon-group {
   color: #79a5ed;
 }
 
-#old-tweets-header {
+#user-tag {
+  display: none;
+}
+
+#one header {
   display: flex;
   justify-content: space-between;
 }
@@ -61,15 +65,15 @@ main {
 }
 
 hr {
-border: 2px solid #545149;
+  border: 2px solid #545149;
 }
 
-#old-tweets-footer {
+#one footer {
   display: flex;
   justify-content: space-between;
 }
 
-#old-tweets-footer > p {
+#one footer > p {
   margin: 0;
   padding: 0;
 }
@@ -78,9 +82,4 @@ border: 2px solid #545149;
   display: flex;
   justify-content: space-evenly;
   color: #9ebcec;
-}
-
-#user-tag {
-  display: none;
-  color: #79a5ed;
 }
