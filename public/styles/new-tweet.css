@@ -26,3 +26,7 @@ textarea {
   font-family: "Bungee";
   font-size: 18px;
 }
+
+.gone-over-limit {
+  color: red;
+}

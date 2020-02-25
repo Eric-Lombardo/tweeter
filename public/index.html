@@ -48,7 +48,7 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets/" method="POST">
-          <textarea rows="1" name="text" placeholder="Whatchu wanna say bruh!"></textarea>
+          <textarea id="newTweetText" rows="1" name="text" placeholder="Whatchu wanna say bruh!"></textarea>
           <div class="form-flex-group">
             <input type="submit" value="Tweet" class="submit-btn">
             <span class="counter">140</span>
@@ -63,5 +63,6 @@
       </p>
 
     </main>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </body>
 </html>
