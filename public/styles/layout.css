@@ -25,42 +25,57 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
-   width: 90%;
-   margin: 0 auto;
- }
+main {
+  width: 90%;
+  margin: 0 auto;
+}
 
- .old-tweets {
-   border: 2px solid black;
-   padding: 0.5em;
-   margin-top: 2em;
- }
+.old-tweets {
+  border: 2px solid #545149;
+  padding: 0.5em;
+  margin-top: 2em;
+}
 
- #old-tweets-header {
-   display: flex;
-   justify-content: space-between;
- }
+.old-tweets:hover {
+  font-weight: bold;
+  box-shadow: 8px 8px #00cafe;
+}
 
- .user {
-   display: flex;
-   justify-content: flex-start;
- }
+.old-tweets:hover #user-tag {
+  display: block;
+}
 
- hr {
-  border: 2px solid black;
- }
 
- #old-tweets-footer {
-   display: flex;
-   justify-content: space-between;
- }
+#old-tweets-header {
+  display: flex;
+  justify-content: space-between;
+}
 
- #old-tweets-footer > p {
-   margin: 0;
-   padding: 0;
- }
+.user {
+  display: flex;
+  justify-content: flex-start;
+}
 
- .icon-group {
-   display: flex;
-   justify-content: space-evenly;
- }
+hr {
+border: 2px solid #545149;
+}
+
+#old-tweets-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#old-tweets-footer > p {
+  margin: 0;
+  padding: 0;
+}
+
+.icon-group {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#user-tag {
+  display: none;
+  color: #00cafe
+}
