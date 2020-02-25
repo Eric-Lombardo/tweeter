@@ -30,23 +30,23 @@ main {
   margin: 0 auto;
 }
 
-#one {
+.tweet {
   border: 2px solid #545149;
   padding: 0.5em;
   margin-top: 2em;
 }
 
-#one:hover {
+.tweet:hover {
   color: black;
   box-shadow: 8px 8px #79a5ed;
 }
 
-#one:hover #user-tag {
+.tweet:hover #user-tag {
   display: block;
   color: #79a5ed;
 }
 
-#one:hover .icon-group {
+.tweet:hover .icon-group {
   color: #79a5ed;
 }
 
@@ -54,7 +54,7 @@ main {
   display: none;
 }
 
-#one header {
+.tweet header {
   display: flex;
   justify-content: space-between;
 }
@@ -68,12 +68,12 @@ hr {
   border: 2px solid #545149;
 }
 
-#one footer {
+.tweet footer {
   display: flex;
   justify-content: space-between;
 }
 
-#one footer > p {
+.tweet footer > p {
   margin: 0;
   padding: 0;
 }
