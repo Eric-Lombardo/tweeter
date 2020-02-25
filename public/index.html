@@ -33,7 +33,7 @@
       </div>
     </nav>
 
-    <header>
+    <header id="jumbo">
       <div>
         <img id="profile-pic" src="/images/profile-hex.png" alt="cartoon female portrait">
       </div>
@@ -45,6 +45,8 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+      <!-- new-tweet -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets/" method="POST">
@@ -56,13 +58,31 @@
         </form>
       </section>
 
-      <p>
-        Bacon ipsum dolor amet pork belly pork cupim pastrami pig cow boudin turducken meatloaf swine leberkas. Frankfurter chuck tongue jerky, cupim bacon fatback meatloaf beef ribs biltong kielbasa meatball. Strip steak landjaeger andouille alcatra shankle, shank tri-tip tail ham hock porchetta. Leberkas frankfurter boudin biltong landjaeger swine. Flank ball tip pork chop pork tri-tip. Prosciutto cow swine chislic sausage shoulder burgdoggen. Buffalo cow chicken pastrami, andouille biltong strip steak kielbasa short ribs chuck ground round pork chop.
-        
-        Picanha bresaola venison, kevin kielbasa pork loin tail shank sirloin alcatra. Prosciutto andouille chuck jerky meatloaf strip steak shankle, turkey chicken t-bone spare ribs pork loin pastrami. Jerky t-bone pork chislic sirloin turducken shankle sausage boudin ribeye picanha chuck short ribs rump. Jowl corned beef tongue flank, hamburger t-bone leberkas prosciutto porchetta. Tongue prosciutto andouille porchetta turducken sausage. Ham capicola swine frankfurter pork chuck rump jowl kevin t-bone.
-      </p>
+      <!-- tweets already made -->
+      <section class="old-tweets">
+        <header id="old-tweets-header">
+          <div class="user">
+            <img src="https://placekitten.com/50/50">
+            <p>Random Person 1</p>
+          </div>
+          <p>@random1</p>
+        </header>
+        <article>
+          <p>i never used twitter before today! am i doing it right</p>
+          <hr>
+        </article>
+        <footer id="old-tweets-footer">
+          <p>days since post</p>
+          <div class="icon-group">
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-sync"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+        </footer>
+      </section>
 
     </main>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/get-time.js"></script>
   </body>
 </html>

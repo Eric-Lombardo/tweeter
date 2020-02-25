@@ -29,3 +29,38 @@ body {
    width: 90%;
    margin: 0 auto;
  }
+
+ .old-tweets {
+   border: 2px solid black;
+   padding: 0.5em;
+   margin-top: 2em;
+ }
+
+ #old-tweets-header {
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .user {
+   display: flex;
+   justify-content: flex-start;
+ }
+
+ hr {
+  border: 2px solid black;
+ }
+
+ #old-tweets-footer {
+   display: flex;
+   justify-content: space-between;
+ }
+
+ #old-tweets-footer > p {
+   margin: 0;
+   padding: 0;
+ }
+
+ .icon-group {
+   display: flex;
+   justify-content: space-evenly;
+ }
