@@ -23,7 +23,8 @@ nav {
   font-family: "Source Sans Pro";
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
+  justify-content: space-around; 
 }
 
 @keyframes color_change {
@@ -34,7 +35,18 @@ nav {
   100% { color: blue; }
 }
 
+@keyframes up_down {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
 .fa-angle-double-down {
-  /* color: red; */
+  position: relative;
+  top: 10px;
+  animation: up_down 1s infinite alternate;
+}
+
+.fa-angle-double-down:hover {
+  animation: up_down 1s infinite alternate;
   animation: color_change 5s infinite;
 }
