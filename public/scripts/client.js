@@ -30,6 +30,8 @@ const data = [
   }
 ]
 
+
+// create html element with dataobj
 const createTweetElement = function(tweetObj) {
   const $tweet = $("<article>").addClass("tweet")
   
@@ -66,6 +68,8 @@ const createTweetElement = function(tweetObj) {
   return $tweet;
 }
 
+// looping through an array of data objs and using createTweetElement
+// to build html elements
 const renderTweets = function(dataArr) {
   for (let dataObj of dataArr) {
     let newTweet = createTweetElement(dataObj);
@@ -75,4 +79,26 @@ const renderTweets = function(dataArr) {
 
 $(document).ready(function() {
   renderTweets(data);
+})
+
+// ---------------- building elements above -------------
+// ---------------- ajax post request below -------------
+
+$(document).ready(function() {
+  // targetting the form element
+  $("#newTweetForm").submit(function(event) {
+    event.preventDefault();
+
+    let formData = $("#newTweetForm").serialize();
+
+    // ajax request
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: formData
+    })
+      .done(function(message) {
+      })
+    
+  })
 })
