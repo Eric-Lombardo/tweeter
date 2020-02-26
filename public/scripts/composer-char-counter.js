@@ -13,6 +13,8 @@ $(document).ready(function() {
     if (maxChar - counter < 0) {
       $(".counter").first().addClass("gone-over-limit")
     }
+    
+    $("textarea").css("height", $("textarea")[0].scrollHeight);
   })
   
   

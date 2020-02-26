@@ -74,12 +74,3 @@ const renderTweets = function(dataArr) {
 $(document).ready(function() {
   renderTweets(data);
 })
-
-
-
-// $(document).ready(function() {
-//   const $newTweet = createTweetElement(tweetObj);
-//   console.log($newTweet);
-//   console.log($("#tweets-container"));
-//   $("#tweets-container").append($newTweet);
-// })
