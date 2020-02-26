@@ -38,7 +38,7 @@ const createTweetElement = function(tweetObj) {
   const $userName = $("<p>").text(tweetObj.user.name)
   $headerUser.append($userImg);
   $headerUser.append($userName);
-  const $userTag = $("<p>").text(tweetObj.user.handle)
+  const $userTag = $("<p>").attr("id", "user-tag").text(tweetObj.user.handle)
   const $header = $("<header>").append($headerUser)
   $header.append($userTag);
   
@@ -52,7 +52,9 @@ const createTweetElement = function(tweetObj) {
   $iconGroup.append($flag);
   $iconGroup.append($sync);
   $iconGroup.append($heart);
-  const $created = $("<p>").text(tweetObj.created_at);
+  let daysOld = Math.floor(($.now() - tweetObj.created_at) / 86400000);
+  let daysOldStr = `${daysOld} days old`;
+  const $created = $("<p>").text(daysOldStr);
   const $footer = $("<footer>").append($created)
   $footer.append($iconGroup);
   

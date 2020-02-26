@@ -65,6 +65,10 @@ main {
   justify-content: flex-start;
 }
 
+.user img {
+  padding-right: 0.5em;
+}
+
 hr {
   border: 2px solid #545149;
 }
@@ -88,3 +92,4 @@ hr {
 article i {
   padding-right: 0.7em;;
 }
+
