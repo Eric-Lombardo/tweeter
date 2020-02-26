@@ -34,6 +34,7 @@ main {
   border: 2px solid #545149;
   padding: 0.5em;
   margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .tweet:hover {
@@ -82,4 +83,8 @@ hr {
   display: flex;
   justify-content: space-evenly;
   color: #9ebcec;
+}
+
+article i {
+  padding-right: 0.7em;;
 }
