@@ -101,13 +101,16 @@ $(document).ready(function() {
   // targetting the form element
   $("#newTweetForm").submit(function(event) {
     event.preventDefault();
+    $("#error-container").slideUp("slow")
 
     let formData = $("#newTweetForm").serialize();
 
     if ($("#newTweetText").val().length === 0) {
-      alert("the tweet body is empty")
+      $("#error-message").text("the tweet body is empty");
+      $("#error-container").slideDown("slow")
     } else if ($("#newTweetText").val().length > 140) {
-      alert("140 character maximum exceeded");
+      $("#error-message").text("140 character maximum exceeded");
+      $("#error-container").slideDown("slow")
     } else {
       // ajax POST /tweets
       $.ajax({

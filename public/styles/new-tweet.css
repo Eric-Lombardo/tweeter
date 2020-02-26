@@ -35,3 +35,25 @@ textarea {
 .gone-over-limit {
   color: red;
 }
+
+#validation-error {
+  margin-bottom: 1em;
+  height: 2em;
+  width: auto;
+  background-color: rgba(255, 0, 0, 0.75);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fa-exclamation-triangle {
+  color: black;
+}
+
+#error-message {
+  color: black;
+}
+
+#error-container {
+  display: none;
+}
