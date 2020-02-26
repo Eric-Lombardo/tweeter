@@ -84,14 +84,25 @@ $(document).ready(function() {
 // ---------------- building elements above -------------
 // ---------------- ajax post request below -------------
 
+const loadTweets = function() {
+  $.ajax({
+    method: "GET",
+    url: "/tweets"
+  })
+    .then(function(data) {
+      console.log(data);
+      return data;
+    })
+}
+
+
 $(document).ready(function() {
   // targetting the form element
   $("#newTweetForm").submit(function(event) {
     event.preventDefault();
 
     let formData = $("#newTweetForm").serialize();
-
-    // ajax request
+    // ajax POST /tweets
     $.ajax({
       method: "POST",
       url: "/tweets",
@@ -100,5 +111,7 @@ $(document).ready(function() {
       .done(function(message) {
       })
     
+    loadTweets();
   })
 })
+
