@@ -104,10 +104,9 @@ $(document).ready(function() {
 
     let formData = $("#newTweetForm").serialize();
 
-    // "counter" is coming from composer-char-counter.js
-    if (counter === 0) {
+    if ($("#newTweetText").val().length === 0) {
       alert("the tweet body is empty")
-    } else if (counter > 140) {
+    } else if ($("#newTweetText").val().length > 140) {
       alert("140 character maximum exceeded");
     } else {
       // ajax POST /tweets

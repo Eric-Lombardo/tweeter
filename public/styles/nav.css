@@ -27,14 +27,6 @@ nav {
   justify-content: space-around; 
 }
 
-@keyframes color_change {
-  0% { color: blue; }
-  25% { color: purple; }
-  50% { color: red; }
-  75% { color: yellow; }
-  100% { color: blue; }
-}
-
 @keyframes up_down {
   0% { transform: translateY(0); }
   100% { transform: translateY(-10px); }
@@ -43,10 +35,13 @@ nav {
 .fa-angle-double-down {
   position: relative;
   top: 10px;
+  color: red;
   animation: up_down 1s infinite alternate;
 }
 
-.fa-angle-double-down:hover {
-  animation: up_down 1s infinite alternate;
-  animation: color_change 5s infinite;
+#nav-arrow-btn input, button {
+  border: none;
+  outline: 0;
+  background-color: #4056A1;
+  cursor: pointer;
 }

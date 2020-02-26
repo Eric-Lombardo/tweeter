@@ -20,6 +20,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/tweet-slide-down.js"></script>
   </head>
 
   <body>
@@ -29,7 +30,7 @@
       <div class="write-tweet-group">
         <div class="navbar-right-group">
           <p class="write-tweet-text"><strong>Write</strong> a new tweet</p>
-          <a href="#"><i class="fas fa-angle-double-down"></i></a>
+          <button id="nav-arrow-btn"><i class="fas fa-angle-double-down"></i></button>
         </div>
       </div>
     </nav>
@@ -48,7 +49,7 @@
     <main class="container">
 
       <!-- new-tweet -->
-      <section class="new-tweet">
+      <section class="new-tweet hide">
         <h2>Compose Tweet</h2>
         <form id="newTweetForm" action="/tweets/" method="POST">
           <textarea id="newTweetText" rows="1" name="text" placeholder="Whatchu wanna say bruh!"></textarea>
