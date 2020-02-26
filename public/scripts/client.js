@@ -90,7 +90,12 @@ const loadTweets = function() {
     url: "/tweets"
   })
     .then(function(data) {
-      return renderTweets(data);
+      if (data.length === 3) {
+        return renderTweets(data);
+      }
+
+      let newestTweet = [data[data.length - 1]]
+      return renderTweets(newestTweet);
     })
 }
 
