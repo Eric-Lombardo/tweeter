@@ -5,30 +5,30 @@
  */
 
 // temporary data
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
+const data = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+]
 
 
 // create html element with dataobj
@@ -77,23 +77,20 @@ const renderTweets = function(dataArr) {
   }
 }
 
-// $(document).ready(function() {
-//   renderTweets(data);
-// })
+$(document).ready(function() {
+  renderTweets(data);
+})
 
 // ---------------- building elements above -------------
 // ---------------- ajax post request below -------------
 
 const loadTweets = function() {
+  $("#newTweetText").val("");
   $.ajax({
     method: "GET",
     url: "/tweets"
   })
     .then(function(data) {
-      if (data.length === 3) {
-        return renderTweets(data);
-      }
-
       let newestTweet = [data[data.length - 1]]
       return renderTweets(newestTweet);
     })
@@ -107,9 +104,10 @@ $(document).ready(function() {
 
     let formData = $("#newTweetForm").serialize();
 
-    if (formData.length < 6) {
+    // "counter" is coming from composer-char-counter.js
+    if (counter === 0) {
       alert("the tweet body is empty")
-    } else if (formData.length > 145) {
+    } else if (counter > 140) {
       alert("140 character maximum exceeded");
     } else {
       // ajax POST /tweets
