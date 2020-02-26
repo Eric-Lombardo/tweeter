@@ -73,7 +73,7 @@ const createTweetElement = function(tweetObj) {
 const renderTweets = function(dataArr) {
   for (let dataObj of dataArr) {
     let newTweet = createTweetElement(dataObj);
-    $("#tweets-container").append(newTweet);
+    $("#tweets-container").prepend(newTweet);
   }
 }
 
