@@ -90,7 +90,6 @@ const loadTweets = function() {
     url: "/tweets"
   })
     .then(function(data) {
-      console.log(Array.isArray(data));
       return renderTweets(data);
     })
 }
@@ -102,13 +101,21 @@ $(document).ready(function() {
     event.preventDefault();
 
     let formData = $("#newTweetForm").serialize();
-    // ajax POST /tweets
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: formData
-    })
-      .done(() => loadTweets());
+
+    if (formData.length < 6) {
+      alert("the tweet body is empty")
+    } else if (formData.length > 145) {
+      alert("140 character maximum exceeded");
+    } else {
+      // ajax POST /tweets
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: formData
+      })
+        .done(() => loadTweets());
+    }
+
     
   })
 })
