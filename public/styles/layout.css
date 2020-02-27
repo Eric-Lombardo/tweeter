@@ -25,9 +25,8 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-main {
-  width: 90%;
-  margin: 0 auto;
+#user-tag {
+  display: none;
 }
 
 .tweet {
@@ -53,26 +52,9 @@ main {
   justify-content: space-evenly;
 }
 
-#user-tag {
-  display: none;
-}
-
 .tweet header {
   display: flex;
   justify-content: space-between;
-}
-
-.user {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.user img {
-  padding-right: 0.5em;
-}
-
-hr {
-  border: 2px solid #545149;
 }
 
 .tweet footer {
@@ -85,14 +67,31 @@ hr {
   padding: 0;
 }
 
+.user {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.user img {
+  padding-right: 0.5em;
+}
+
 .icon-group {
   display: none;
+}
+
+hr {
+  border: 2px solid #545149;
 }
 
 article i {
   padding-right: 0.7em;;
 }
 
+main {
+  width: 90%;
+  margin: 0 auto;
+}
 /* ---------------- media queries below ------------------------------ */
 
 /* for smaller screens */

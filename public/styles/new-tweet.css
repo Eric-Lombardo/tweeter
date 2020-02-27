@@ -1,17 +1,25 @@
+#validation-error {
+  margin-bottom: 1em;
+  height: 2em;
+  width: auto;
+  background-color: rgba(255, 0, 0, 0.75);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#error-message {
+  color: black;
+}
+
+#error-container {
+  display: none;
+}
+
 .hide {
   display: none;
 }
 
-textarea {
-  display: block;
-  background: transparent;
-  border: none;
-  outline: none;
-  resize: none;
-  width: 100%;
-  font-weight: 700;
-  border-bottom: 3px solid #545149;
-}
 
 .form-flex-group {
   display: flex;
@@ -42,24 +50,17 @@ textarea {
   color: red;
 }
 
-#validation-error {
-  margin-bottom: 1em;
-  height: 2em;
-  width: auto;
-  background-color: rgba(255, 0, 0, 0.75);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
 .fa-exclamation-triangle {
   color: black;
 }
 
-#error-message {
-  color: black;
-}
-
-#error-container {
-  display: none;
+textarea {
+  display: block;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  width: 100%;
+  font-weight: 700;
+  border-bottom: 3px solid #545149;
 }

@@ -37,14 +37,15 @@
       </div>
     </nav>
 
+    <!-- auto-scroll hidden when not needed -->
     <div id="auto-scroll">
       <button id="auto-scroll-btn">
         <i class="fas fa-level-up-alt fa-lg"></i>
       </button>
     </div>
 
-
     <div id="desktop">
+      <!-- current user profile -->
       <header id="jumbo">
         <div>
           <img id="profile-pic" src="/images/profile-hex.png" alt="cartoon female portrait">
@@ -55,12 +56,10 @@
         </div>
       </header>
   
-      <!-- Page-specific (main) content here -->
       <main class="container">
-        <!-- new-tweet -->
+        <!-- compose new tweet -->
         <section class="new-tweet hide">
           <h2>Compose Tweet</h2>
-  
           <div id="error-container">
             <div id="validation-error">
               <i class="fas fa-exclamation-triangle"></i>
@@ -78,10 +77,8 @@
           </form>
         </section>
   
-        <!-- tweets already made -->
-        <section id="tweets-container">
-          <!-- dynamic tweets         -->
-        </section>
+        <!-- tweets history populated from DB in this container -->
+        <section id="tweets-container"></section>
       </main> 
     </div>
   </body>
