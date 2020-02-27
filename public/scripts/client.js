@@ -118,7 +118,11 @@ $(document).ready(function() {
         url: "/tweets",
         data: formData
       })
-        .done(() => loadTweets());
+        .done(() => {
+          loadTweets();
+          $(".counter")[0].innerHTML = 140;
+          $("textarea").css("height", 31);
+        });
     }
 
     

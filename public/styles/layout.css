@@ -49,6 +49,8 @@ main {
 
 .tweet:hover .icon-group {
   color: #79a5ed;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 #user-tag {
@@ -84,9 +86,7 @@ hr {
 }
 
 .icon-group {
-  display: flex;
-  justify-content: space-evenly;
-  color: #9ebcec;
+  display: none;
 }
 
 article i {
@@ -108,7 +108,7 @@ article i {
   }
 
   #nav-arrow-btn > .fa-angle-double-down {
-    color: black;
+    color: #545149;
   }
 }
 
