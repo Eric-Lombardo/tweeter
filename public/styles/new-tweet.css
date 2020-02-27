@@ -24,12 +24,18 @@ textarea {
   color: #545149;
 }
 
+.submit-btn:hover {
+  box-shadow: 4px 4px #fc6500;
+}
+
 .submit-btn {
   border: none;
   background-color: #4056A1;
   color: azure;
   font-family: "Bungee";
   font-size: 18px;
+  outline: 0;
+  cursor: pointer;
 }
 
 .gone-over-limit {
