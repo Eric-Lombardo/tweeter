@@ -45,3 +45,7 @@ nav {
   background-color: #4056A1;
   cursor: pointer;
 }
+
+#hide {
+  display: none;
+}
