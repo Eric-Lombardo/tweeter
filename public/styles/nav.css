@@ -39,13 +39,33 @@ nav {
   animation: up_down 1s infinite alternate;
 }
 
-#nav-arrow-btn input, button {
+#nav-arrow-btn {
   border: none;
   outline: 0;
   background-color: #4056A1;
   cursor: pointer;
 }
 
-#hide {
-  display: none;
+#auto-scroll-btn {
+  background-color: red;
+  position: relative;
+  top: calc(50% - 15px);
+  border: none;
+  outline: 0;
+  cursor: pointer;
+}
+
+#auto-scroll {
+  position: fixed;
+  bottom: 0.8em;
+  right: 0.8em;
+  border-radius: 50%;;
+  background-color: red;
+  height: 3em;
+  width: 3em;
+  text-align: center;
+}
+
+.fa-level-up-alt {
+  color: black;
 }
