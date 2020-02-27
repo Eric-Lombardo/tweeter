@@ -31,6 +31,15 @@ const data = [
 ];
 
 
+// helper function to turn created_at into a more human friendly way
+const reducedDate = function(days) {
+  if (days > 365) {
+    return `nearly ${Math.round(days / 365)} years old`;
+  } else if (days === 0) {
+    return `Today`
+  }
+}
+
 // create html element with given obj data
 const createTweetElement = function(tweetObj) {
   const $tweet = $("<article>").addClass("tweet");
@@ -46,7 +55,7 @@ const createTweetElement = function(tweetObj) {
   $header.append($userTag);
   
   // actual tweet text body
-  const $tweetContent = $("<p>").text(tweetObj.content.text);
+  const $tweetContent = $("<p>").text(tweetObj.content.text).css("word-break", "break-all");
   const $hr = $("<hr>");
   
   // create footer section (days old, icon group(flag, like, retweet))
@@ -57,8 +66,9 @@ const createTweetElement = function(tweetObj) {
   $iconGroup.append($flag);
   $iconGroup.append($sync);
   $iconGroup.append($heart);
+  //  WOAH CAN YOU BELIEVE THERE'S 86 MILLION 400 THOUSAND MILLESECONDS IN ONE DAY!!
   let daysOld = Math.floor(($.now() - tweetObj.created_at) / 86400000);
-  let daysOldStr = `${daysOld} days old`;
+  let daysOldStr = `${reducedDate(daysOld)}`;
   const $created = $("<p>").text(daysOldStr);
   const $footer = $("<footer>").append($created);
   $footer.append($iconGroup);
