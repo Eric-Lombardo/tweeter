@@ -12,13 +12,13 @@ $(document).ready(function() {
       $(".navbar-right-group").fadeIn();
       $("#auto-scroll").fadeOut();
     }
-  })
+  });
 
   // click features for #auto-scroll
   $("#auto-scroll").on("click", function() {
     $(window).scrollTop(0);
     $(".new-tweet").slideDown("slow");
-    $("#newTweetText").focus()
-  })
+    $("#newTweetText").focus();
+  });
 
-})
+});

@@ -11,11 +11,11 @@ $(document).ready(function() {
     
     // if negative add class
     if (maxChar - counter < 0) {
-      $(".counter").first().addClass("gone-over-limit")
+      $(".counter").first().addClass("gone-over-limit");
     }
     
     $("textarea").css("height", $("textarea")[0].scrollHeight);
-  })
+  });
   
   
   // if there's a backspace pressed adjust count
@@ -25,11 +25,11 @@ $(document).ready(function() {
       if (counter <= 0) {
         counter = 0;
       }
-      $(".counter")[0].innerHTML = maxChar - counter; 
+      $(".counter")[0].innerHTML = maxChar - counter;
     }
     
     if (maxChar - counter >= 0) {
-      $(".counter").first().removeClass("gone-over-limit")
+      $(".counter").first().removeClass("gone-over-limit");
     }
-  })
-})
+  });
+});

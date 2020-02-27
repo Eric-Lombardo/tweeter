@@ -28,20 +28,20 @@ const data = [
     },
     "created_at": 1461113959088
   }
-]
+];
 
 
 // create html element with dataobj
 const createTweetElement = function(tweetObj) {
-  const $tweet = $("<article>").addClass("tweet")
+  const $tweet = $("<article>").addClass("tweet");
   
   const $headerUser = $("<div>").addClass("user");
-  const $userImg = $("<img>").attr("src", tweetObj.user.avatars)
-  const $userName = $("<p>").text(tweetObj.user.name)
+  const $userImg = $("<img>").attr("src", tweetObj.user.avatars);
+  const $userName = $("<p>").text(tweetObj.user.name);
   $headerUser.append($userImg);
   $headerUser.append($userName);
-  const $userTag = $("<p>").attr("id", "user-tag").text(tweetObj.user.handle)
-  const $header = $("<header>").append($headerUser)
+  const $userTag = $("<p>").attr("id", "user-tag").text(tweetObj.user.handle);
+  const $header = $("<header>").append($headerUser);
   $header.append($userTag);
   
   const $tweetContent = $("<p>").text(tweetObj.content.text);
@@ -57,16 +57,16 @@ const createTweetElement = function(tweetObj) {
   let daysOld = Math.floor(($.now() - tweetObj.created_at) / 86400000);
   let daysOldStr = `${daysOld} days old`;
   const $created = $("<p>").text(daysOldStr);
-  const $footer = $("<footer>").append($created)
+  const $footer = $("<footer>").append($created);
   $footer.append($iconGroup);
   
-  $tweet.append($header)
-  $tweet.append($tweetContent)
-  $tweet.append($hr)
-  $tweet.append($footer)
+  $tweet.append($header);
+  $tweet.append($tweetContent);
+  $tweet.append($hr);
+  $tweet.append($footer);
   
   return $tweet;
-}
+};
 
 // looping through an array of data objs and using createTweetElement
 // to build html elements
@@ -75,11 +75,11 @@ const renderTweets = function(dataArr) {
     let newTweet = createTweetElement(dataObj);
     $("#tweets-container").prepend(newTweet);
   }
-}
+};
 
 $(document).ready(function() {
   renderTweets(data);
-})
+});
 
 // ---------------- building elements above -------------
 // ---------------- ajax post request below -------------
@@ -91,26 +91,26 @@ const loadTweets = function() {
     url: "/tweets"
   })
     .then(function(data) {
-      let newestTweet = [data[data.length - 1]]
+      let newestTweet = [data[data.length - 1]];
       return renderTweets(newestTweet);
-    })
-}
+    });
+};
 
 
 $(document).ready(function() {
   // targetting the form element
   $("#newTweetForm").submit(function(event) {
     event.preventDefault();
-    $("#error-container").slideUp("slow")
+    $("#error-container").slideUp("slow");
 
     let formData = $("#newTweetForm").serialize();
 
     if ($("#newTweetText").val().length === 0) {
       $("#error-message").text("the tweet body is empty");
-      $("#error-container").slideDown("slow")
+      $("#error-container").slideDown("slow");
     } else if ($("#newTweetText").val().length > 140) {
       $("#error-message").text("140 character maximum exceeded");
-      $("#error-container").slideDown("slow")
+      $("#error-container").slideDown("slow");
     } else {
       // ajax POST /tweets
       $.ajax({
@@ -126,6 +126,6 @@ $(document).ready(function() {
     }
 
     
-  })
-})
+  });
+});
 
