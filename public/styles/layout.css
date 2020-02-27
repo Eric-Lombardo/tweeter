@@ -93,3 +93,41 @@ article i {
   padding-right: 0.7em;;
 }
 
+/* ----------------------------------------------- */
+/* media queries */
+
+@media screen and (max-width:1023px) {
+  body > nav {
+    background-color: #fc6500;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  }
+  
+  .navbar-right-group > #nav-arrow-btn {
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    background-color: #fc6500;
+  }
+
+  #nav-arrow-btn > .fa-angle-double-down {
+    color: black;
+  }
+}
+
+@media screen and (min-width:1024px) {
+
+
+  #desktop > #jumbo {
+    margin-top: 2em;
+    margin-right: 2em;
+  }
+
+  #desktop {
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-around;
+    padding: 2em;
+  }
+
+  #auto-scroll {
+    left: 0.8em;
+  }
+}
