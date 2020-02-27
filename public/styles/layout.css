@@ -93,9 +93,9 @@ article i {
   padding-right: 0.7em;;
 }
 
-/* ----------------------------------------------- */
-/* media queries */
+/* ---------------- media queries below ------------------------------ */
 
+/* for smaller screens */
 @media screen and (max-width:1023px) {
   body > nav {
     background-color: #fc6500;
@@ -112,9 +112,8 @@ article i {
   }
 }
 
+/* for larger screens liek desktops */
 @media screen and (min-width:1024px) {
-
-
   #desktop > #jumbo {
     margin-top: 2em;
     margin-right: 2em;

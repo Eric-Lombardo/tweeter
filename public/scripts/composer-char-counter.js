@@ -14,14 +14,17 @@ $(document).ready(function() {
       $(".counter").first().addClass("gone-over-limit");
     }
     
+    // never allow textarea to enter scroll-mode
     $("textarea").css("height", $("textarea")[0].scrollHeight);
   });
   
   
   // if there's a backspace pressed adjust count
   $("#newTweetText").on("keydown", function(event) {
+    // keycode 8 = backspace
     if (event.keyCode === 8) {
       counter--;
+      // never allow counter to be less than 0
       if (counter <= 0) {
         counter = 0;
       }
