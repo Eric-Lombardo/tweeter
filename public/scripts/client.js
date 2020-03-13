@@ -93,7 +93,12 @@ const renderTweets = function(dataArr) {
 
 // to display starter data on page load
 $(document).ready(function() {
-  renderTweets(data);
+  // renderTweets(data);
+  $.ajax({
+    method: "GET",
+    url: "/tweets"
+  })
+    .then(data => renderTweets(data))
 });
 
 // ---------------- building elements above -------------
@@ -146,3 +151,4 @@ $(document).ready(function() {
   });
 });
 
+// export default data

@@ -5,6 +5,8 @@ const userHelper    = require("../lib/util/user-helper");
 const express       = require('express');
 const tweetsRoutes  = express.Router();
 
+// import data from "../../public/scripts/client"
+
 module.exports = function(DataHelpers) {
 
   tweetsRoutes.get("/", function(req, res) {
