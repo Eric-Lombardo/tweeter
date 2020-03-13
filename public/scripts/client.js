@@ -42,44 +42,31 @@ const reducedDate = function(days) {
 
 // create html element with given obj data
 const createTweetElement = function(tweetObj) {
-  const $tweet = $("<article>").addClass("tweet");
-  
-  // create header section of a tweet (profile pic, name, @tag)
-  const $headerUser = $("<div>").addClass("user");
-  const $userImg = $("<img>").attr("src", tweetObj.user.avatars);
-  const $userName = $("<p>").text(tweetObj.user.name);
-  $headerUser.append($userImg);
-  $headerUser.append($userName);
-  const $userTag = $("<p>").attr("id", "user-tag").text(tweetObj.user.handle);
-  const $header = $("<header>").append($headerUser);
-  $header.append($userTag);
-  
-  // actual tweet text body
-  const $tweetContent = $("<p>").text(tweetObj.content.text).css("word-break", "break-all");
-  const $hr = $("<hr>");
-  
-  // create footer section (days old, icon group(flag, like, retweet))
-  const $iconGroup = $("<div>").addClass("icon-group");
-  const $flag = $("<i>").addClass("fas fa-flag");
-  const $sync = $("<i>").addClass("fas fa-sync");
-  const $heart = $("<i>").addClass("fas fa-heart");
-  $iconGroup.append($flag);
-  $iconGroup.append($sync);
-  $iconGroup.append($heart);
-  //  WOAH CAN YOU BELIEVE THERE'S 86 MILLION 400 THOUSAND MILLESECONDS IN ONE DAY!!
-  let daysOld = Math.floor(($.now() - tweetObj.created_at) / 86400000);
-  let daysOldStr = `${reducedDate(daysOld)}`;
-  const $created = $("<p>").text(daysOldStr);
-  const $footer = $("<footer>").append($created);
-  $footer.append($iconGroup);
-  
-  // stitch everything inside 1 article
-  $tweet.append($header);
-  $tweet.append($tweetContent);
-  $tweet.append($hr);
-  $tweet.append($footer);
-  
-  return $tweet;
+  let buildStr = `
+  <article class="tweet">
+    <header>
+      <div class="user">
+        <img src="${tweetObj.user.avatars}">
+        <p>${tweetObj.user.name}</p>
+      </div>
+      <p id="user-tag">${tweetObj.user.handle}</p>
+    </header>
+
+    <p style="word-break: break-all;">${tweetObj.content.text}</p>
+
+    <hr>
+
+    <footer>
+      <p>${reducedDate(Math.floor(($.now() - tweetObj.created_at) / 86400000))}</p>
+      <div class="icon-group">
+        <i class="fas fa-flag"></i>
+        <i class="fas fa-sync"></i>
+        <i class="fas fa-heart"></i>
+      </div>
+    </footer>
+  </article>`
+
+  return $(buildStr);
 };
 
 // looping through an array of data objs and using createTweetElement
