@@ -32,11 +32,54 @@ const data = [
 
 
 // helper function to turn created_at into a more human friendly way
-const reducedDate = function(days) {
-  if (days > 365) {
-    return `nearly ${Math.round(days / 365)} years old`;
-  } else if (days === 0) {
-    return `Today`
+const reducedDate = function(milleseconds) {
+  let years = 0;
+  let months = 0;
+  let days = 0;
+  let hours = 0;
+  let minutes = 0;
+  let seconds = 0;
+
+  // reduce milleseconds into year/month/day/hour/minute/second components
+  while (milleseconds >= 1000) {
+    if (milleseconds >= 31556952000) {
+      milleseconds -= 31556952000;
+      years++
+    } else if (milleseconds >= 2592000000) {
+      milleseconds -= 2592000000;
+      months++
+    } else if (milleseconds >= 86400000) {
+      milleseconds -= 86400000;
+      days++
+    } else if (milleseconds >= 3600000) {
+      milleseconds -= 3600000;
+      hours++
+    } else if (milleseconds >= 60000) {
+      milleseconds -= 60000;
+      minutes++
+    } else if (milleseconds >= 1000) {
+      milleseconds -= 1000;
+      seconds++
+    }
+  }
+
+  // return the most useful timestamp back
+  if (!seconds) {
+    return "just now"
+  } else if (years && months) {
+    return `${years} years and ${months} months ago`
+  } else if (years) {
+    return `${years} years ago`
+  } else if (months) {
+    return `${months} months ago`
+  } else if (days) {
+    return `${days} days ago`
+  } else if (hours) {
+    return `${hours} hours ago`
+  } else if (minutes) {
+    return `${minutes} minutes and ${seconds} seconds ago`
+  } else if (seconds) {
+    return `${seconds} seconds ago`
   }
 }
 
@@ -57,11 +100,11 @@ const createTweetElement = function(tweetObj) {
     <hr>
 
     <footer>
-      <p>${reducedDate(Math.floor(($.now() - tweetObj.created_at) / 86400000))}</p>
+      <p>${reducedDate($.now() - tweetObj.created_at)}</p>
       <div class="icon-group">
-        <i class="fas fa-flag"></i>
-        <i class="fas fa-sync"></i>
-        <i class="fas fa-heart"></i>
+      <i class="fas fa-flag"></i>
+      <i class="fas fa-sync"></i>
+      <i class="fas fa-heart"></i>
       </div>
     </footer>
   </article>`
@@ -137,5 +180,3 @@ $(document).ready(function() {
     }
   });
 });
-
-// export default data
